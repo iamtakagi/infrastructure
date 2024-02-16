@@ -2,12 +2,10 @@
 
 cd /build
 
-URL='https://papermc.io/api/v2/projects/paper'
-MC_VERSION='1.20.4'
-URL=${URL}/versions/${MC_VERSION}
+VERSION='1.20.4'
 BUILD='424'
-JAR_NAME=paper-${MC_VERSION}-${BUILD}.jar
-URL=${URL}/builds/${BUILD}/downloads/${JAR_NAME}
+JAR_NAME=paper-${VERSION}-${BUILD}.jar
+URL=https://papermc.io/api/v2/projects/paper/versions/${VERSION}/builds/${BUILD}/downloads/${JAR_NAME}
 
 # Download paper.jar
 wget ${URL} -O paper.jar
