@@ -1,0 +1,6 @@
+[submodule "Mirakurun"]
+	path = ./dtv/Mirakurun
+	url = https://github.com/iamtakagi/Mirakurun
+[submodule "KonomiTV"]
+	path = ./dtv/KonomiTV
+	url = https://github.com/tsukumijima/KonomiTV

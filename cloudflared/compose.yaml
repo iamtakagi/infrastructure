@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    user: root
+    restart: always
+    command: tunnel --no-chunked-encoding --config $HOME/.cloudflared/config.yaml run stgy
+    volumes:
+      - '$HOME/.cloudflared:/root/.cloudflared'
+    networks:
+      - nginx_default
+
+networks:
+  nginx_default:
+    external: true
