@@ -11,6 +11,7 @@ services:
     tty: true
     stdin_open: true
     environment:
+      TZ: "Asia/Tokyo"
       JAVA_OPTS: "-Xms4096M -Xmx8192M"
     ports:
       - 25565:25565/tcp
