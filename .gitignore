@@ -5,21 +5,21 @@ dtv/mysql
 
 cloudflare-ddns/config.json
 
-minecraft/paper/cache
-minecraft/paper/config
-minecraft/paper/libraries
-minecraft/paper/logs
-minecraft/paper/versions
-minecraft/paper/world
-minecraft/paper/world_nether
-minecraft/paper/world_the_end
-minecraft/paper/.*
-minecraft/paper/*.*
+minecraft/data/cache
+minecraft/data/config
+minecraft/data/libraries
+minecraft/data/logs
+minecraft/data/versions
+minecraft/data/world
+minecraft/data/world_nether
+minecraft/data/world_the_end
+minecraft/data/.*
+minecraft/data/*.*
 
-!minecraft/paper/spigot.yml
-!minecraft/paper/bukkit.yml
-!minecraft/paper/server.properties
-!minecraft/paper/config/
+!minecraft/data/spigot.yml
+!minecraft/data/bukkit.yml
+!minecraft/data/server.properties
+!minecraft/data/config/
 
-minecraft/paper/plugins/*
-!minecraft/paper/plugins/*.jar
+minecraft/data/plugins/*
+!minecraft/data/plugins/*.jar
