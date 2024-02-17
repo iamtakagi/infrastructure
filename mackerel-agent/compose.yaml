@@ -16,8 +16,11 @@ services:
       - include=/etc/mackerel-agent/conf.d/*.conf
     restart: always
     networks:
+      - nginx_default
       - minecraft_default
 
 networks:
+  nginx_default:
+    external: true
   minecraft_default:
     external: true
