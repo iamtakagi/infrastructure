@@ -1,12 +1,13 @@
 version: '3.9'
 services:
-  paper:
-    container_name: paper
+  minecraft:
+    container_name: minecraft
+    hostname: minecraft
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./paper:/app
+      - ./data:/app
     tty: true
     stdin_open: true
     environment:
