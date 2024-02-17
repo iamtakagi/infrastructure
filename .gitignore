@@ -5,4 +5,16 @@ dtv/mysql
 
 cloudflare-ddns/config.json
 
-minecraft/paper
+minecraft/paper/cache
+minecraft/paper/config
+minecraft/paper/libraries
+minecraft/paper/logs
+minecraft/paper/versions
+minecraft/paper/world
+minecraft/paper/world_nether
+minecraft/paper/world_the_end
+minecraft/paper/.*
+minecraft/paper/*.*
+
+minecraft/paper/plugins/*
+!minecraft/paper/plugins/*.jar
