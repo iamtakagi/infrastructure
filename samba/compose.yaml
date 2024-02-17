@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  smb:
-    container_name: smb
-    image: smb:latest
+  samba:
+    container_name: samba
+    image: samba:latest
     build:
       context: .
       dockerfile: Dockerfile
