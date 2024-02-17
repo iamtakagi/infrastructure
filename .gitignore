@@ -16,5 +16,10 @@ minecraft/paper/world_the_end
 minecraft/paper/.*
 minecraft/paper/*.*
 
+!minecraft/paper/spigot.yml
+!minecraft/paper/bukkit.yml
+!minecraft/paper/server.properties
+!minecraft/paper/config/
+
 minecraft/paper/plugins/*
 !minecraft/paper/plugins/*.jar
