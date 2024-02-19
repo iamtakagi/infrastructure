@@ -18,9 +18,12 @@ services:
     networks:
       - nginx_default
       - minecraft_default
+      - samba_default
 
 networks:
   nginx_default:
     external: true
   minecraft_default:
+    external: true
+  samba_default:
     external: true
