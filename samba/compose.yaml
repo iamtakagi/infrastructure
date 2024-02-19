@@ -3,6 +3,7 @@ services:
   samba:
     container_name: samba
     image: samba:latest
+    hostname: samba
     build:
       context: .
       dockerfile: Dockerfile
