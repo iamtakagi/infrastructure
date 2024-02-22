@@ -23,8 +23,6 @@ WORKDIR /
 COPY --from=builder /build/waterfall.jar /bin/
 COPY --from=builder /build/paper.jar /bin/
 
-ENV JAVA_HOME /opt/java/openjdk
-
 # run.sh
 COPY --from=builder /build/run.sh /bin/
 RUN chmod +x /bin/run.sh
