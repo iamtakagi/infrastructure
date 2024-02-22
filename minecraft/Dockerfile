@@ -5,29 +5,29 @@ ARG GROUPNAME=app
 ARG UID=1000
 ARG GID=1000
 
-# Install packages required to build
 RUN apk add --no-cache wget jq
 
-# Download Paper: paper.jar
-ADD ./download.sh /build/
-RUN /build/download.sh
+ADD ./init.sh /build/
+RUN /build/init.sh
+
+ADD ./run.sh /build/
 
 FROM eclipse-temurin:18-jre-alpine
 
-# Set timezone to Asia/Tokyo
 RUN apk --update add tzdata && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
     apk del tzdata && \
     rm -rf /var/cache/apk/*
 
-# Add entire papermc directory
-WORKDIR /app
-
-# Cleanup
-# Copy files from builder
+WORKDIR /
+COPY --from=builder /build/waterfall.jar /bin/
 COPY --from=builder /build/paper.jar /bin/
 
-# Run the server (PaperMC)
-CMD java -server $JAVA_OPTS -jar /bin/paper.jar
+ENV JAVA_HOME /opt/java/openjdk
+
+# run.sh
+COPY --from=builder /build/run.sh /bin/
+RUN chmod +x /bin/run.sh
+CMD ["/bin/run.sh"]
 
 EXPOSE 25565/tcp

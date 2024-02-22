@@ -7,11 +7,13 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./data:/app
+      - ./waterfall:/app/waterfall
+      - ./paper:/app/paper
     tty: true
     stdin_open: true
     environment:
       TZ: "Asia/Tokyo"
-      JAVA_OPTS: "-Xms4096M -Xmx8192M"
+      WATERFALL_JAVA_OPTS: "-Xms1024M -Xmx2048M"
+      PAPER_JAVA_OPTS: "-Xms4096M -Xmx8192M"
     ports:
       - 25565:25565/tcp
