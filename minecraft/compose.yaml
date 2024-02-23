@@ -7,8 +7,11 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - ./waterfall:/app/waterfall
       - ./paper:/app/paper
+      - /mnt/storage1:/mnt/storage1
+      - /mnt/storage2:/mnt/storage2
     tty: true
     stdin_open: true
     environment:
