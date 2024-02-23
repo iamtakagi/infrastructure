@@ -1,4 +1,4 @@
-enforce_secure_profile: false
+enforce_secure_profile: true
 listeners:
 - query_port: 25565
   motd: A Minecraft Server
@@ -12,7 +12,7 @@ listeners:
   - paper
   bind_local_address: true
   host: 0.0.0.0:25565
-  max_players: 1
+  max_players: 10
   tab_size: 60
   force_default_server: false
 remote_ping_cache: -1
@@ -33,7 +33,7 @@ server_connect_timeout: 5000
 timeout: 30000
 stats: a79c1a04-6f41-4930-818a-4643f997ecf4
 player_limit: 10
-ip_forward: false
+ip_forward: true
 groups:
   iamtakagi:
   - admin
@@ -47,6 +47,6 @@ disabled_commands:
 - disabledcommandhere
 servers:
   paper:
-    motd: A Minecraft Server
     address: minecraft:25566
-    restricted: true
+    restricted: false
+    motd: '&1Just another Waterfall - Forced Host'
