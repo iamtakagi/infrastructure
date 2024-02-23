@@ -29,7 +29,7 @@ settings:
   timeout-time: 60
   restart-on-crash: true
   restart-script: ./start.sh
-  bungeecord: false
+  bungeecord: true
   save-user-cache-on-stop-only: false
   sample-count: 12
 commands:
