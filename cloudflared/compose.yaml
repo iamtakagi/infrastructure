@@ -5,7 +5,7 @@ services:
     image: cloudflare/cloudflared:latest
     user: root
     restart: always
-    command: tunnel --no-chunked-encoding --config $HOME/.cloudflared/config.yaml run stgy
+    command: tunnel --no-autoupdate run --token $CLOUDFLARED_TOKEN
     volumes:
       - '$HOME/.cloudflared:/root/.cloudflared'
     networks:
