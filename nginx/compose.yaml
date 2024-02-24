@@ -14,3 +14,12 @@ services:
     environment:
       TZ: Asia/Tokyo
     restart: always
+    networks:
+      - nginx_default
+      - bluemap_default
+
+networks:
+  nginx_default:
+    external: true
+  bluemap_default:
+    external: true
