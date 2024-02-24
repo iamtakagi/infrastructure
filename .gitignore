@@ -38,5 +38,8 @@ minecraft/bluemap/web/index.html
 minecraft/bluemap/web/sql.php
 minecraft/bluemap/minecraft-client-*.jar
 minecraft/bluemap/resourceExtensions.zip
+minecraft/db/data
+minecraft/db/log
+minecraft/db/my.cnf
 
 nohup.out

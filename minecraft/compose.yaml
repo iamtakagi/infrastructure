@@ -20,6 +20,11 @@ services:
       PAPER_JAVA_OPTS: "-Xms4096M -Xmx8192M"
     ports:
       - 25565:25565/tcp
+    networks:
+      - minecraft_default
+      - internal
+    depends_on:
+      - db
   bluemap:
     image: ghcr.io/bluemap-minecraft/bluemap:latest
     container_name: bluemap
@@ -35,3 +40,26 @@ services:
       - './bluemap/config:/app/config'
       - './bluemap:/app/data'
       - './bluemap/web:/app/web'
+    networks:
+      - bluemap_default
+  db:
+    restart: unless-stopped
+    image: mariadb:10.7.3-focal
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./db/log:/var/log/mysql
+      - ./db/init:/docker-entrypoint-initdb.d
+    environment:
+        TZ: 'Asia/Tokyo'
+        MYSQL_ROOT_PASSWORD: 'root'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
+    networks:
+      - internal
+
+networks:
+  minecraft_default:
+    external: true
+  bluemap_default:
+    external: true
+  internal:
