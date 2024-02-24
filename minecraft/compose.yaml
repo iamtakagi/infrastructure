@@ -20,3 +20,18 @@ services:
       PAPER_JAVA_OPTS: "-Xms4096M -Xmx8192M"
     ports:
       - 25565:25565/tcp
+  bluemap:
+    image: ghcr.io/bluemap-minecraft/bluemap:latest
+    container_name: bluemap
+    hostname: bluemap
+    restart: always
+    command: -r -u -w
+    ports:
+      - '8100:8100'
+    volumes:
+      - './paper/world:/app/world'
+      - './paper/world_nether:/world_nether'
+      - './paper/world_the_end:/world_the_end'
+      - './bluemap/config:/app/config'
+      - './bluemap:/app/data'
+      - './bluemap/web:/app/web'

@@ -24,12 +24,19 @@ minecraft/paper/*.*
 minecraft/paper/plugins/*
 !minecraft/paper/plugins/*.jar
 minecraft/paper/crash-reports/
-
 minecraft/waterfall/logs
 minecraft/waterfall/modules
 minecraft/waterfall/plugins/*
 !minecraft/waterfall/plugins/*.jar
 minecraft/waterfall/locations.yml
 minecraft/waterfall/modules.yml
+minecraft/bluemap/logs
+minecraft/bluemap/web/assets
+minecraft/bluemap/web/lang
+minecraft/bluemap/web/maps
+minecraft/bluemap/web/index.html
+minecraft/bluemap/web/sql.php
+minecraft/bluemap/minecraft-client-*.jar
+minecraft/bluemap/resourceExtensions.zip
 
 nohup.out
