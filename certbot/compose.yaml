@@ -1,0 +1,7 @@
+services:
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ../certificates:/etc/letsencrypt
+      - ../nginx/html:/var/www/html
+    command: ["--version"]

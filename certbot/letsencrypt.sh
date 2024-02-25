@@ -1,0 +1,1 @@
+docker-compose run --rm certbot certonly --webroot -w /var/www/html -m 'ssl@iamtakagi.net' -d $DOMAIN --agree-tos
