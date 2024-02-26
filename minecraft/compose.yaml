@@ -40,8 +40,8 @@ services:
       - './bluemap/config:/app/config'
       - './bluemap:/app/data'
       - './bluemap/web:/app/web'
-    networks:
-      - bluemap_default
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
   db:
     restart: unless-stopped
     image: mariadb:10.7.3-focal

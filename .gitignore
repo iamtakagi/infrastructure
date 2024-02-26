@@ -41,5 +41,6 @@ minecraft/bluemap/resourceExtensions.zip
 minecraft/db/data
 minecraft/db/log
 minecraft/db/my.cnf
-
 nohup.out
+
+certificates/
