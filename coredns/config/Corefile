@@ -1,6 +1,6 @@
 . {
     whoami
-    forward . 1.1.1.1 8.8.8.8 100.100.100.100 192.168.100.254
+    forward . 1.1.1.1 8.8.8.8 100.100.100.100
     errors
     log . "{proto} {remote} is Request: {name} {type} {>id}"
     hosts /etc/coredns/hosts {
