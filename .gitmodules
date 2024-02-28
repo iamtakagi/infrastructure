@@ -4,3 +4,6 @@
 [submodule "KonomiTV"]
 	path = ./dtv/KonomiTV
 	url = https://github.com/tsukumijima/KonomiTV
+[submodule "certificates"]
+	path = ./certificates
+	url = https://github.com/iamtakagi/certificates

@@ -42,5 +42,3 @@ bluemap/data/web/sql.php
 bluemap/data/minecraft-client-*.jar
 bluemap/data/resourceExtensions.zip
 nohup.out
-
-certificates/
