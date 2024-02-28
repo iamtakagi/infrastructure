@@ -19,3 +19,4 @@ services:
     network_mode: host
     extra_hosts:
       - host.docker.internal:host-gateway
+    command: "/bin/sh -c 'while :; do sleep 36h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"

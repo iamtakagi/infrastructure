@@ -4,4 +4,4 @@ services:
     volumes:
       - ../certificates:/etc/letsencrypt
       - ../nginx/html:/var/www/html
-    command: ["--version"]
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
