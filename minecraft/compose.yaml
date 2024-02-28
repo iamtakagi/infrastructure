@@ -10,8 +10,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./waterfall:/app/waterfall
       - ./paper:/app/paper
-      - /mnt/storage1:/mnt/storage1
-      - /mnt/storage2:/mnt/storage2
     tty: true
     stdin_open: true
     environment:
@@ -24,6 +22,21 @@ services:
       - internal
     depends_on:
       - db
+  backup:
+    container_name: backup
+    hostname: backup
+    build:
+      context: ./backup
+      dockerfile: Dockerfile
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./paper/world:/app/world
+      - ./paper/world_nether:/app/world_nether
+      - ./paper/world_the_end:/app/world_the_end
+      - /mnt/storage1:/mnt/storage1
+      - /mnt/storage2:/mnt/storage2
+    environment:
+      TZ: "Asia/Tokyo"
   db:
     container_name: db
     hostname: db
