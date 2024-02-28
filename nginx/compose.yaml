@@ -13,6 +13,7 @@ services:
       - ../certificates/live:/certificates/live:ro
       - ../certificates/self-signed:/certificates/self-signed:ro
       - ./html:/var/www/html
+      - ../nextcloud/html:/var/www/nextcloud
     environment:
       TZ: Asia/Tokyo
     restart: always
