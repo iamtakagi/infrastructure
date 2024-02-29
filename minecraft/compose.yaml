@@ -25,6 +25,7 @@ services:
   backup:
     container_name: backup
     hostname: backup
+    user: root
     build:
       context: ./backup
       dockerfile: Dockerfile
