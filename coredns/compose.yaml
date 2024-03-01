@@ -8,4 +8,5 @@ services:
     container_name: coredns
     network_mode: host
     volumes:
-      - './config:/etc/coredns'
+      - './config/Corefile:/etc/coredns/Corefile'
+      - './config/hosts:/etc/coredns/hosts'
