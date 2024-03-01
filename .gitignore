@@ -43,5 +43,7 @@ bluemap/data/minecraft-client-*.jar
 bluemap/data/resourceExtensions.zip
 nohup.out
 
+owncast/data
+
 nextcloud/html
 nextcloud/postgres
