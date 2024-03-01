@@ -1,4 +1,4 @@
-. {
+.:53 {
     whoami
     errors
     log . "{proto} {remote} is Request: {name} {type} {>id}"
