@@ -9,9 +9,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./waterfall:/app/waterfall
-      - ./universal:/app/universal
-      - ./1.16.5:/app/1.16.5
-      - ./1.20.4:/app/1.20.4
+      - ./paper:/app/paper
     tty: true
     stdin_open: true
     environment:
@@ -24,25 +22,22 @@ services:
       - internal
     depends_on:
       - db
-  #backup:
-    #container_name: backup
-    #hostname: backup
-    #user: root
-    #build:
-      #context: ./backup
-      #dockerfile: Dockerfile
-    #volumes:
-      #- /etc/localtime:/etc/localtime:ro
-      #- ./1.16.5/world:/app/world
-      #- ./1.16.5/world_nether:/app/world_nether
-      #- ./1.16.5/world_the_end:/app/world_the_end
-      #- ./1.20.4/world:/app/world
-      #- ./1.20.4/world_nether:/app/world_nether
-      #- ./1.20.4/world_the_end:/app/world_the_end
-      #- /mnt/storage1:/mnt/storage1
-      #- /mnt/storage2:/mnt/storage2
-    #environment:
-      #TZ: "Asia/Tokyo"
+  backup:
+    container_name: backup
+    hostname: backup
+    user: root
+    build:
+      context: ./backup
+      dockerfile: Dockerfile
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./paper/world:/app/world
+      - ./paper/world_nether:/app/world_nether
+      - ./paper/world_the_end:/app/world_the_end
+      - /mnt/storage1:/mnt/storage1
+      - /mnt/storage2:/mnt/storage2
+    environment:
+      TZ: "Asia/Tokyo"
   db:
     container_name: db
     hostname: db

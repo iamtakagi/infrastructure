@@ -6,10 +6,10 @@ listeners:
   query_enabled: false
   proxy_protocol: false
   forced_hosts:
-    mc.iamtakagi.net: universal
+    mc.iamtakagi.net: paper
   ping_passthrough: false
   priorities:
-  - universal
+  - paper
   bind_local_address: true
   host: 0.0.0.0:25565
   max_players: 10
@@ -31,8 +31,8 @@ log_pings: true
 connection_throttle_limit: 3
 server_connect_timeout: 5000
 timeout: 30000
-stats: a79c1a04-6f41-4930-818a-4643f997ecf4
 player_limit: 10
+prevent_proxy_connections: false
 ip_forward: true
 groups:
   iamtakagi:
@@ -40,21 +40,13 @@ groups:
 remote_ping_timeout: 5000
 connection_throttle: 4000
 log_commands: false
-prevent_proxy_connections: false
+stats: a79c1a04-6f41-4930-818a-4643f997ecf4
 online_mode: true
 forge_support: true
 disabled_commands:
 - disabledcommandhere
 servers:
-  universal:
+  paper:
     address: minecraft:25566
-    restricted: false
-    motd: '&1Just another Waterfall - Forced Host'
-  1.20.4:
-    address: minecraft:25567
-    restricted: false
-    motd: '&1Just another Waterfall - Forced Host'
-  1.16.5:
-    address: minecraft:25568
     restricted: false
     motd: '&1Just another Waterfall - Forced Host'
