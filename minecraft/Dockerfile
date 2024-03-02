@@ -10,7 +10,7 @@ ADD ./init.sh /build/
 ADD ./run.sh /build/
 RUN /build/init.sh
 
-FROM eclipse-temurin:18-jre-alpine
+FROM openjdk:16-jdk-alpine3.13
 
 RUN apk --update add tzdata  && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
@@ -18,8 +18,9 @@ RUN apk --update add tzdata  && \
     rm -rf /var/cache/apk/*
 
 WORKDIR /
-COPY --from=builder /build/waterfall.jar /bin/
-COPY --from=builder /build/paper.jar /bin/
+COPY --from=builder /build/waterfall-1.16-431.jar /bin/
+COPY --from=builder /build/paper-1.16.5-794.jar /bin/
+COPY --from=builder /build/paper-1.20.4-424.jar /bin/
 
 COPY --from=builder /build/run.sh /bin/
 RUN chmod +x /bin/run.sh
