@@ -8,14 +8,12 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./waterfall:/app/waterfall
-      - ./paper:/app/paper
+      - ./mohist:/app/mohist
     tty: true
     stdin_open: true
     environment:
       TZ: "Asia/Tokyo"
-      WATERFALL_JAVA_OPTS: "-Xms1024M -Xmx2048M"
-      PAPER_JAVA_OPTS: "-Xms4096M -Xmx8192M"
+      JAVA_OPTS: "-Xms4096M -Xmx8192M"
     ports:
       - 25565:25565/tcp
     networks:
@@ -31,9 +29,9 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./paper/world:/app/world
-      - ./paper/world_nether:/app/world_nether
-      - ./paper/world_the_end:/app/world_the_end
+      - ./mohist/world:/app/world
+      - ./mohist/world_nether:/app/world_nether
+      - ./mohist/world_the_end:/app/world_the_end
       - /mnt/storage1:/mnt/storage1
       - /mnt/storage2:/mnt/storage2
     environment:

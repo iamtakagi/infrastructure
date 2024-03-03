@@ -2,14 +2,8 @@
 
 cd /build
 
-VERSION='1.20'
-BUILD='562'
-JAR_NAME=waterfall-${VERSION}-${BUILD}.jar
-URL=https://papermc.io/api/v2/projects/waterfall/versions/${VERSION}/builds/${BUILD}/downloads/${JAR_NAME}
-wget ${URL} -O waterfall.jar
-
-VERSION='1.20.4'
-BUILD='424'
-JAR_NAME=paper-${VERSION}-${BUILD}.jar
-URL=https://papermc.io/api/v2/projects/paper/versions/${VERSION}/builds/${BUILD}/downloads/${JAR_NAME}
-wget ${URL} -O paper.jar
+VERSION='1.20.1'
+BUILD='558'
+JAR_NAME=mohist-${VERSION}-${BUILD}-server.jar
+URL=https://mohistmc.com/api/v2/projects/mohist/${VERSION}/builds/${BUILD}/${JAR_NAME}
+wget ${URL} -O server.jar
