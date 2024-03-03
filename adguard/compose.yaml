@@ -1,0 +1,18 @@
+services:
+  adguard:
+    container_name: adguard
+    image: adguard/adguardhome:latest
+    restart: unless-stopped
+    volumes:
+      - ./conf:/opt/adguardhome/conf
+      - ./work:/opt/adguardhome/work
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Tokyo
+    mem_limit: 4g
+    network_mode: host
+    #ports:
+      #- 2053:2053
+      #- 8020:8020

@@ -6,5 +6,5 @@
     hosts /etc/coredns/hosts {
         fallthrough
     }
-    forward . 1.1.1.1 8.8.8.8 100.100.100.100
+    forward . 127.0.0.1:2053
 }

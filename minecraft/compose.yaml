@@ -14,12 +14,11 @@ services:
     environment:
       TZ: "Asia/Tokyo"
       JAVA_OPTS: "-Xms4096M -Xmx8192M"
-    ports:
-      - 25565:25565/tcp
-    networks:
-      - internal
+    network_mode: "host"
     depends_on:
       - db
+    dns:
+      - 127.0.0.1:53
   backup:
     container_name: backup
     hostname: backup
@@ -37,8 +36,8 @@ services:
     environment:
       TZ: "Asia/Tokyo"
   db:
-    container_name: db
-    hostname: db
+    container_name: minecraft_db
+    hostname: minecraft_db
     restart: unless-stopped
     image: mariadb:10.7.3-focal
     volumes:
@@ -50,8 +49,3 @@ services:
         TZ: 'Asia/Tokyo'
         MYSQL_ROOT_PASSWORD: 'root'
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
-    networks:
-      - internal
-
-networks:
-  internal:
