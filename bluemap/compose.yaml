@@ -8,9 +8,9 @@ services:
     ports:
       - '8100:8100'
     volumes:
-      - '../minecraft/paper/world:/app/world'
-      - '../minecraft/paper/world_nether:/world_nether'
-      - '../minecraft/paper/world_the_end:/world_the_end'
+      - '../minecraft/mohist/world:/app/world'
+      - '../minecraft/mohist/world_nether:/world_nether'
+      - '../minecraft/mohist/world_the_end:/world_the_end'
       - './data/config:/app/config'
       - './data:/app/data'
       - './data/web:/app/web'
