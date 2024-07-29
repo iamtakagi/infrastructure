@@ -2,10 +2,10 @@
 	path = certificates
 	url = https://github.com/iamtakagi/certificates
 [submodule "tuner/mirakurun/recpt1"]
-	path = tuner/mirakurun/recpt1
+	path = ./tuner/mirakurun/recpt1
 	url = https://github.com/stz2012/recpt1.git
 [submodule "tuner/mirakurun/libarib25"]
-	path = tuner/mirakurun/libarib25
+	path = ./tuner/mirakurun/libarib25
 	url = https://github.com/stz2012/libarib25.git
 [submodule "tuner/konomitv"]
 	path = tuner/konomitv
