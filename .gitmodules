@@ -1,9 +1,6 @@
-[submodule "Mirakurun"]
-	path = ./dtv/Mirakurun
-	url = https://github.com/iamtakagi/Mirakurun
-[submodule "KonomiTV"]
-	path = ./dtv/KonomiTV
-	url = https://github.com/tsukumijima/KonomiTV
 [submodule "certificates"]
 	path = certificates
-	url = https://github.com/iamtakagi/certificates
+	url = https://github.com/iamtakagi/certificates.git
+[submodule "konomitv"]
+	path = tuner/konomitv
+	url = https://github.com/tsukumijima/KonomiTV.git
