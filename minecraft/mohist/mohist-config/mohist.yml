@@ -83,7 +83,8 @@ mohist:
     check: true
     downloadsource: MOHIST
   installation-finished: false
-  check_client_mods: false
+  check_client_mods: true
+  check_update_auto_download: false
 config-version: 1
 keepinventory:
   global:
