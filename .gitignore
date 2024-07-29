@@ -1,9 +1,18 @@
 .env
 
-dtv/EPGStation
-dtv/KonomiTV
-dtv/Mirakurun
-dtv/mysql
+tuner/epgstation/config/*
+!tuner/epgstation/config/*.js
+!tuner/epgstation/config/*.template
+tuner/epgstation/data/*
+tuner/epgstation/logs/*
+tuner/epgstation/thumbnail/*
+
+tuner/mirakurun/config/*
+tuner/mirakurun/data/*
+!tuner/mirakurun/config/server.yml
+!tuner/mirakurun/config/tuners.yml
+
+tuner/db/*
 
 cloudflare-ddns/config.json
 
@@ -45,4 +54,6 @@ nextcloud/postgres
 adguard/work/data/filters/1.txt
 adguard/work/data/stats.db
 adguard/work/data/sessions.db
-adguard/work/data/querylog.json
+adguard/work/data/querylog.json*
+
+!.gitkeep

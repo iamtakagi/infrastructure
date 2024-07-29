@@ -4,3 +4,9 @@
 [submodule "konomitv"]
 	path = tuner/konomitv
 	url = https://github.com/tsukumijima/KonomiTV.git
+[submodule "tuner/mirakurun/libarib25"]
+	path = tuner/mirakurun/libarib25
+	url = https://github.com/stz2012/libarib25
+[submodule "tuner/mirakurun/recpt1"]
+	path = tuner/mirakurun/recpt1
+	url = https://github.com/stz2012/recpt1
