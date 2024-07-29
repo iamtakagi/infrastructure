@@ -1,9 +1,9 @@
 [submodule "certificates"]
 	path = certificates
-	url = https://github.com/iamtakagi/certificates.git
+	url = https://github.com/iamtakagi/certificates
 [submodule "konomitv"]
 	path = tuner/konomitv
-	url = https://github.com/tsukumijima/KonomiTV.git
+	url = https://github.com/tsukumijima/KonomiTV
 [submodule "tuner/mirakurun/libarib25"]
 	path = tuner/mirakurun/libarib25
 	url = https://github.com/stz2012/libarib25
