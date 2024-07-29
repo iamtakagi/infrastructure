@@ -15,4 +15,15 @@ services:
       - auto_retirement=0
       - include=/etc/mackerel-agent/conf.d/*.conf
     restart: always
-    network_mode: host
+    networks:
+      - nginx_default
+      - minecraft_default
+      - samba_default
+
+networks:
+  nginx_default:
+    external: true
+  minecraft_default:
+    external: true
+  samba_default:
+    external: true

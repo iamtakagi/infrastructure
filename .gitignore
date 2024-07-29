@@ -1,5 +1,10 @@
 .env
 
+dtv/EPGStation
+dtv/KonomiTV
+dtv/Mirakurun
+dtv/mysql
+
 cloudflare-ddns/config.json
 
 minecraft/mohist/cache
@@ -40,4 +45,4 @@ nextcloud/postgres
 adguard/work/data/filters/1.txt
 adguard/work/data/stats.db
 adguard/work/data/sessions.db
-adguard/work/data/querylog.json*
+adguard/work/data/querylog.json

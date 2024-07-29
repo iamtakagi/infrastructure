@@ -21,7 +21,7 @@ services:
       - internal
 
   app:
-    image: nextcloud:25.0.1
+    image: nextcloud:25.0.1-fpm
     container_name: nextcloud
     restart: always
     volumes:

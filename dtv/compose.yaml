@@ -1,0 +1,117 @@
+version: '3.9'
+services:
+
+  mysql:
+    container_name: mysql
+    image: mariadb:10.5
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_USER: epgstation
+      MYSQL_PASSWORD: epgstation
+      MYSQL_ROOT_PASSWORD: epgstation
+      MYSQL_DATABASE: epgstation
+      TZ: "Asia/Tokyo"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --performance-schema=false --expire_logs_days=1
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - internal
+
+  mirakurun:
+    container_name: mirakurun
+    image: mirakurun:latest
+    build:
+      context: ./mirakurun
+      dockerfile: docker/Dockerfile
+    cap_add:
+      - SYS_ADMIN
+      - SYS_NICE
+    ports:
+      - "40772:40772"
+      - "9229:9229"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./Mirakurun/docker/container-init.sh:/app/container-init.sh
+      - ./Mirakurun/conf:/app-config
+      - ./Mirakurun/data:/app-data
+      - mirakurun_socket:/var/run
+    user: 0:0
+    environment:
+      TZ: "Asia/Tokyo"
+    devices:
+      - /dev/px4video0:/dev/px4video0
+      - /dev/px4video1:/dev/px4video1
+      - /dev/px4video2:/dev/px4video2
+      - /dev/px4video3:/dev/px4video3
+      - /dev/bus:/dev/bus
+    restart: always
+    logging:
+      driver: json-file
+      options:
+        max-file: "1"
+        max-size: 10m
+    networks:
+      - internal
+
+  epgstation:
+    container_name: epgstation
+    image: epgstation:latest
+    build:
+      context: ./epgstation
+      dockerfile: debian.Dockerfile
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./EPGStation/config:/app/config
+      - ./EPGStation/data:/app/data
+      - ./EPGStation/thumbnail:/app/thumbnail
+      - ./EPGStation/logs:/app/logs
+      - /mnt/storage1/TV/Record:/app/recorded
+      - mirakurun_socket:/var/run
+    user: 0:0
+    environment:
+      TZ: "Asia/Tokyo"
+    depends_on:
+      - mirakurun
+      - mysql
+    ports:
+      - "8888:8888"
+      - "8889:8889"
+    restart: always
+    networks:
+      - internal
+      - default
+
+  konomitv:
+    image: konomitv:latest
+    container_name: konomitv
+    build:
+      context: ./KonomiTV
+      dockerfile: Dockerfile
+    restart: always
+    network_mode: host
+    volumes:
+      - type: bind
+        source: './KonomiTV/config.yaml'
+        target: '/code/config.yaml'
+      - type: bind
+        source: './KonomiTV/server/data/'
+        target: '/code/server/data/'
+      - type: bind
+        source: './KonomiTV/server/logs/'
+        target: '/code/server/logs/'
+      - type: bind
+        source: '/'
+        target: '/host-rootfs/'
+    depends_on:
+      - mirakurun
+
+networks:
+  internal:
+
+volumes:
+  mirakurun_socket:
