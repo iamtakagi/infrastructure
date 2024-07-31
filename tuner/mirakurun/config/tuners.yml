@@ -1,4 +1,4 @@
- name: SAT-1
+- name: SAT-1
   types:
     - BS
   command: recpt1 --device /dev/px4video0 --lnb 15 <channel> - -
