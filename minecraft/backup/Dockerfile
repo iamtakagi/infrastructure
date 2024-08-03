@@ -1,4 +1,7 @@
-FROM alpine:latest AS builder
+FROM alpine:latest
+
+RUN apk update
+RUN apk add curl
 
 COPY cron.sh /bin/
 
