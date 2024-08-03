@@ -22,9 +22,9 @@ EOF
 mkdir -p /mnt/storage1/backup/minecraft/${DATE}
 cp -R /app/world* /mnt/storage1/backup/minecraft/${DATE}
 
-send_discord_notification "ワールドデータ (world, world_nether, world_the_end) のバックアップ: /mnt/storage1/backup/minecraft/${DATE} (プライマリストレージ) に保存されました。"
+send_discord_notification "ワールドデータ (world, world_nether, world_the_end) のバックアップ: /mnt/storage1/backup/minecraft/${DATE} (プライマリストレージ) への保存が完了しました"
 
 mkdir -p /mnt/storage2/backup/minecraft/${DATE}
 cp -R /app/world* /mnt/storage2/backup/minecraft/${DATE}
 
-send_discord_notification "ワールドデータ (world, world_nether, world_the_end) のバックアップ: /mnt/storage2/backup/minecraft/${DATE} (セカンダリストレージ) に保存されました。"
+send_discord_notification "ワールドデータ (world, world_nether, world_the_end) のバックアップ: /mnt/storage2/backup/minecraft/${DATE} (セカンダリストレージ) への保存が完了しました"
