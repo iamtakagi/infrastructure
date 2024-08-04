@@ -14,6 +14,8 @@ settings:
   debug: false
   netty-threads: 4
   attribute:
+    maxAbsorption:
+      max: 2048.0
     maxHealth:
       max: 2048.0
     movementSpeed:
@@ -59,6 +61,7 @@ advancements:
   - minecraft:story/disabled
 world-settings:
   default:
+    unload-frozen-chunks: false
     below-zero-generation-in-existing-chunks: true
     entity-tracking-range:
       players: 48

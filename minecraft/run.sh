@@ -1,5 +1,5 @@
 #!/bin/sh
 
-cd /app/mohist && java -server $JAVA_OPTS -jar server.jar --nogui
+cd /app/paper && java -server $PAPER_JAVA_OPTS -jar /bin/paper.jar --nogui
 
 tail -f /dev/null
