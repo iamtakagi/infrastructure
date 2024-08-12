@@ -24,6 +24,7 @@ minecraft/paper/versions
 minecraft/paper/world
 minecraft/paper/world_nether
 minecraft/paper/world_the_end
+minecraft/paper/resources
 minecraft/paper/.*
 minecraft/paper/*.*
 !minecraft/paper/spigot.yml
