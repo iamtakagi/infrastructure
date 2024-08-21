@@ -19,12 +19,16 @@ EOF
   curl -H "Content-Type: application/json" -X POST -d "$payload" $discord_url
 }
 
-mkdir -p /mnt/storage1/backup/minecraft/${DATE}
-cp -R /app/world* /mnt/storage1/backup/minecraft/${DATE}
+mkdir -p /mnt/storage1/backup/minecraft/alpha/${DATE}
+cp -R /app/alpha/world* /mnt/storage1/backup/minecraft/alpha/${DATE}
+send_discord_notification "ワールドデータ alpha (world, world_nether, world_the_end) のバックアップ: /mnt/storage1/backup/minecraft/alpha/${DATE} (プライマリストレージ) への保存が完了しました"
+mkdir -p /mnt/storage2/backup/minecraft/alpha/${DATE}
+cp -R /app/alpha/world* /mnt/storage2/backup/minecraft/alpha/${DATE}
+send_discord_notification "ワールドデータ alpha (world, world_nether, world_the_end) のバックアップ: /mnt/storage2/backup/minecraft/alpha/${DATE} (セカンダリストレージ) への保存が完了しました"
 
-send_discord_notification "ワールドデータ (world, world_nether, world_the_end) のバックアップ: /mnt/storage1/backup/minecraft/${DATE} (プライマリストレージ) への保存が完了しました"
-
+mkdir -p /mnt/storage1/backup/minecraft/beta/${DATE}
+cp -R /app/beta/world* /mnt/storage1/backup/minecraft/beta/${DATE}
+send_discord_notification "ワールドデータ beta (world, world_nether, world_the_end) のバックアップ: /mnt/storage1/backup/minecraft/beta/${DATE} (プライマリストレージ) への保存が完了しました"
 mkdir -p /mnt/storage2/backup/minecraft/${DATE}
-cp -R /app/world* /mnt/storage2/backup/minecraft/${DATE}
-
-send_discord_notification "ワールドデータ (world, world_nether, world_the_end) のバックアップ: /mnt/storage2/backup/minecraft/${DATE} (セカンダリストレージ) への保存が完了しました"
+cp -R /app/beta/world* /mnt/storage2/backup/minecraft/beta/${DATE}
+send_discord_notification "ワールドデータ beta (world, world_nether, world_the_end) のバックアップ: /mnt/storage2/backup/minecraft/beta/${DATE} (セカンダリストレージ) への保存が完了しました"

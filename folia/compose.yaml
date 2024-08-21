@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  folia:
+    container_name: folia
+    hostname: folia
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./dist:/dist
+    tty: true
+    stdin_open: true
+    environment:
+      TZ: "Asia/Tokyo"
+      JAVA_OPTS: "-Xms8192M -Xmx8192M"
+    network_mode: "host"

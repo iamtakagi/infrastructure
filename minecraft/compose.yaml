@@ -1,26 +1,73 @@
 version: '3.9'
 services:
-  paper:
-    container_name: paper
-    hostname: paper
+  velocity:
     build:
-      context: .
+      context: ./velocity
       dockerfile: Dockerfile
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./paper:/app/paper
+      - ./velocity:/app/velocity
     tty: true
     stdin_open: true
     environment:
       TZ: "Asia/Tokyo"
-      JAVA_OPTS: "-Xms10240M -Xmx10240M"
-    network_mode: "host"
+      JAVA_OPTS: "-Xms1024M -Xmx1024M"
+    depends_on:
+      - lobby
+      - db
+    ports:
+      - 25565:25565/tcp
+  lobby:
+    container_name: lobby
+    hostname: lobby
+    build:
+      context: ./lobby
+      dockerfile: Dockerfile
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./lobby:/app/paper
+    tty: true
+    stdin_open: true
+    environment:
+      TZ: "Asia/Tokyo"
+      JAVA_OPTS: "-Xms1024M -Xmx1024M"
+    depends_on:
+      - alpha
+      - beta
+      - db
+  alpha:
+    container_name: alpha
+    hostname: alpha
+    build:
+      context: ./alpha
+      dockerfile: Dockerfile
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./alpha:/app/paper
+    tty: true
+    stdin_open: true
+    environment:
+      TZ: "Asia/Tokyo"
+      JAVA_OPTS: "-Xms8192M -Xmx8192M"
     depends_on:
       - db
-    dns:
-      - 127.0.0.1:53
+  beta:
+    container_name: beta
+    hostname: beta
+    build:
+      context: ./beta
+      dockerfile: Dockerfile
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./beta:/app/paper
+    tty: true
+    stdin_open: true
+    environment:
+      TZ: "Asia/Tokyo"
+      JAVA_OPTS: "-Xms4096M -Xmx4096M"
+    depends_on:
+      - db
   backup:
-    container_name: backup
     hostname: backup
     user: root
     build:
@@ -28,9 +75,12 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./paper/world:/app/world
-      - ./paper/world_nether:/app/world_nether
-      - ./paper/world_the_end:/app/world_the_end
+      - ./alpha/world:/app/alpha/world
+      - ./alpha/world_nether:/app/alpha/world_nether
+      - ./alpha/world_the_end:/app/alpha/world_the_end
+      - ./beta/world:/app/beta/world
+      - ./beta/world_nether:/app/beta/world_nether
+      - ./beta/world_the_end:/app/beta/world_the_end
       - /mnt/storage1:/mnt/storage1
       - /mnt/storage2:/mnt/storage2
     environment:
