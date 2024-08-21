@@ -1,0 +1,21 @@
+sidebar:
+  title: "&dウズシカさーばー"
+  lines:
+    - "&rPing: {PING}ms"
+    - "&r総接続数: {TOTAL_CONNECTIONS}"
+    - "&7{DATE} {TIME}"
+  pattern:
+    date: yyyy/MM/dd
+    time: HH:mm:ss
+    world_date: yyyy/MM/dd
+    world_time: HH:mm
+servers:
+  - alpha:alpha:25567:3.848:-55.0:-17.551:-2.7:-4.2
+  - beta:beta:25568:7.572:-55.0:-17.438:-2.7:-4.2
+join:
+  messages:
+    - "&dウズシカさーばーへようこそ！"
+    - "&rDiscord: &9https://discord.gg/N6gADVxcyp"
+    - "&rmonocraft: &ahttps://monocraft.net/servers/Md2LOd4g63m2PHKLHmBT"
+  title: "&dウズシカさーばーへようこそ！"
+  subtitle: "&rゆっくりしていってね"

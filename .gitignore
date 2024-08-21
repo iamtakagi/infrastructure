@@ -33,8 +33,13 @@ minecraft/**/*/100000m
 minecraft/**/*/Apricity_Athletic_Formal
 minecraft/**/*/.*
 minecraft/**/*/*.*
-!minecraft/**/*/*.sh
-!minecraft/**/*/*.jar
+!*.sh
+!*.jar
+!*.yml
+!*.yaml
+minecraft/**/plugins/DiscordSRV/*
+minecraft/**/plugins/DiscordNickTag/*
+minecraft/**/plugins/DiscordLevelTag/*
 !minecraft/**/*/spigot.yml
 !minecraft/**/*/bukkit.yml
 !minecraft/**/*/server.properties
