@@ -10,8 +10,9 @@ sidebar:
     world_date: yyyy/MM/dd
     world_time: HH:mm
 servers:
-  - alpha:alpha:25567:3.848:-55.0:-17.551:-2.7:-4.2
-  - beta:beta:25568:7.572:-55.0:-17.438:-2.7:-4.2
+  - alpha:alpha:25567:0:0:0:0:0:&aサバイバル
+  - beta:beta:25568:0:0:0:0:0:&aサバイバル
+  - gamma:gamma:25569:0:0:0:0:0:&aクリエイティブ
 join:
   messages:
     - "&dウズシカさーばーへようこそ！"

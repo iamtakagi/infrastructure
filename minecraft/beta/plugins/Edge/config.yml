@@ -1,6 +1,7 @@
 sidebar:
   title: "&dウズシカさーばー"
   lines:
+    - "&rServer: beta"
     - "&r{PING}ms"
     - "&r{WORLD}"
     - "&r{WORLD_TIME} ({WEATHER})"

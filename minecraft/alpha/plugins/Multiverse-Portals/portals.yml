@@ -18,3 +18,4 @@ portals:
     owner: ml_dayon
     location: -10.0,63.0,-112.0:-10.0,66.0,-108.0
     world: world
+    destination: world
