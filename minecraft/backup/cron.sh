@@ -32,3 +32,10 @@ send_discord_notification "ワールドデータ beta (world, world_nether, worl
 mkdir -p /mnt/storage2/backup/minecraft/${DATE}
 cp -R /app/beta/world* /mnt/storage2/backup/minecraft/beta/${DATE}
 send_discord_notification "ワールドデータ beta (world, world_nether, world_the_end) のバックアップ: /mnt/storage2/backup/minecraft/beta/${DATE} (セカンダリストレージ) への保存が完了しました"
+
+mkdir -p /mnt/storage1/backup/minecraft/gamma/${DATE}
+cp -R /app/beta/world* /mnt/storage1/backup/minecraft/gamma/${DATE}
+send_discord_notification "ワールドデータ gamma (world, world_nether, world_the_end) のバックアップ: /mnt/storage1/backup/minecraft/gamma/${DATE} (プライマリストレージ) への保存が完了しました"
+mkdir -p /mnt/storage2/backup/minecraft/${DATE}
+cp -R /app/gamma/world* /mnt/storage2/backup/minecraft/gamma/${DATE}
+send_discord_notification "ワールドデータ gamma (world, world_nether, world_the_end) のバックアップ: /mnt/storage2/backup/minecraft/gamma/${DATE} (セカンダリストレージ) への保存が完了しました"

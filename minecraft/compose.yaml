@@ -32,7 +32,7 @@ services:
     stdin_open: true
     environment:
       TZ: "Asia/Tokyo"
-      JAVA_OPTS: "-Xms1024M -Xmx1024M"
+      JAVA_OPTS: "-Xms2048M -Xmx2048M"
     depends_on:
       - alpha
       - beta
@@ -101,14 +101,17 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /etc/localtime:/etc/localtime:ro
+      - /mnt/storage1:/mnt/storage1
+      - /mnt/storage2:/mnt/storage2
       - ./alpha/world:/app/alpha/world
       - ./alpha/world_nether:/app/alpha/world_nether
       - ./alpha/world_the_end:/app/alpha/world_the_end
       - ./beta/world:/app/beta/world
       - ./beta/world_nether:/app/beta/world_nether
       - ./beta/world_the_end:/app/beta/world_the_end
-      - /mnt/storage1:/mnt/storage1
-      - /mnt/storage2:/mnt/storage2
+      - ./gamma/world:/app/gamma/world
+      - ./gamma/world_nether:/app/gamma/world_nether
+      - ./gamma/world_the_end:/app/gamma/world_the_end
     environment:
       TZ: "Asia/Tokyo"
   db:
