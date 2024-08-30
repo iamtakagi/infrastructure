@@ -10,6 +10,6 @@
 [submodule "tuner/mirakurun/recpt1"]
 	path = tuner/mirakurun/recpt1
 	url = https://github.com/stz2012/recpt1
-[submodule "infrastructure"]
+[submodule "minecraft"]
 	path = minecraft
 	url = https://github.com/iamtakagi/infrastructure
